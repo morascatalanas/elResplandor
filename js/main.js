@@ -9,7 +9,7 @@ ctx.fillStyle = grd
 ctx.fillRect(0,0,1000,450)
 ctx.strokeStyle="#351F11"
 let altoCelda = 47
-let anchoCelda=47
+let anchoCelda=70
 let restoAncho = 36.3
 let altoPantalla=470
 let anchoPantalla=1000
