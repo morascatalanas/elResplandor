@@ -2,18 +2,18 @@ let canvas = document.querySelector("#canvas")
 canvas.width= 1023
 canvas.height= 470
 let ctx = canvas.getContext("2d")
-let grd = ctx.createLinearGradient(0,0,0,450)
+let altoCelda = 47
+let anchoCelda=73
+let restoAncho = 36.3
+let altoPantalla=470
+let anchoPantalla=1023
 
-
-ctx.lineWidth= 5
-ctx.stroke()
-let teclap=0;
 let sprite = new Image()
 sprite.src="img/ash.png"
 let indiceX=0,indiceY=0;
 let ashX=0, ashY=0;
 let ancho1=64,alto1=64;
-
+let teclap=0;
 function dibujaCanvas(){
 let grd = ctx.createLinearGradient(0,0,0,470)
 grd.addColorStop(0,"#C0AE88")
@@ -21,11 +21,7 @@ grd.addColorStop(1,"white")
 ctx.fillStyle = grd
 ctx.fillRect(0,0,1023,470)
 ctx.strokeStyle="#351F11"
-let altoCelda = 47
-let anchoCelda=70
-let restoAncho = 36.3
-let altoPantalla=470
-let anchoPantalla=1000
+
     ctx.moveTo(0,altoCelda)
     ctx.lineTo(anchoCelda,altoCelda)
     ctx.moveTo(anchoCelda,altoCelda*2)
@@ -97,7 +93,7 @@ let anchoPantalla=1000
     ctx.lineTo(anchoCelda*12,altoCelda*2)
     ctx.moveTo(anchoCelda*9,altoCelda*2)
     ctx.lineTo(anchoCelda*9,altoCelda*1)
-    ctx.moveTo(anchoCelda*13,altoCelda*2)
+    ctx.moveTo(anchoCelda*13,0)
     ctx.lineTo(anchoCelda*13,altoCelda*8)
     ctx.moveTo(anchoCelda*13,altoCelda*8)
     ctx.lineTo(anchoCelda*9,altoCelda*8)
@@ -108,12 +104,6 @@ let anchoPantalla=1000
     ctx.lineWidth= 5
 ctx.stroke()
   ctx.drawImage(sprite,indiceX*32,indiceY*32,32,32,ashX,ashY,64,64)
- 
-
-  
-// if((x2<(ashX+ancho1))){
-//   colisiona=1
-//    }
 
   indiceX= indiceX+1;
   if(indiceX>4){
@@ -149,3 +139,45 @@ break
 default:
   break
   }}
+//VARIABLES QUE PODRIAN AYUDARNOS A HACER LAS COLISIONES
+  //  let anchoCelda1=anchoCelda
+//  let anchoCelda2=anchoCelda*2
+//  let anchoCelda3=anchoCelda*3
+//  let anchoCelda4=anchoCelda*4
+//  let anchoCelda5=anchoCelda*5
+//  let anchoCelda6=anchoCelda*6
+//  let anchoCelda7=anchoCelda*7
+//  let anchoCelda8=anchoCelda*8
+//  let anchoCelda9=anchoCelda*9
+//  let anchoCelda10=anchoCelda*10
+//  let anchoCelda11=anchoCelda*11
+//  let anchoCelda12=anchoCelda*12
+//  let anchoCelda13=anchoCelda*13
+//  let altoCelda1=altoCelda
+//  let altoCelda2=altoCelda*2
+//  let altoCelda3=altoCelda*3
+//  let altoCelda4=altoCelda*4
+//  let altoCelda5=altoCelda*5
+//  let altoCelda6=altoCelda*6
+//  let altoCelda7=altoCelda*7
+//  let altoCelda8=altoCelda*8
+//  let altoCelda9=altoCelda*9
+//  let altoCelda10=altoCelda*10
+//  let altoCelda11=altoCelda*11
+//  let altoCelda12=altoCelda*12
+//ARRAYS QUE CONTIENEN LOS ANCHOS Y ALTOS DE LAS LINEAS
+//  let ancho=[anchoCelda1,anchoCelda2,anchoCelda3,anchoCelda4,anchoCelda5,anchoCelda6,anchoCelda7,anchoCelda8,anchoCelda9,anchoCelda10,anchoCelda11,anchoCelda12]
+//  let alto=[altoCelda1,
+//     altoCelda2,
+//     altoCelda3,
+//     altoCelda4,
+//     altoCelda5,
+//     altoCelda6,
+//     altoCelda7,
+//     altoCelda8,
+//     altoCelda9,
+//     altoCelda10,
+//     altoCelda11,
+//     altoCelda12
+// ]
+
