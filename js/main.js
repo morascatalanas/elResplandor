@@ -14,7 +14,48 @@ let restoAncho = 36.3
 let altoPantalla=470
 let anchoPantalla=1000
 
-ctx.moveTo(0,altoCelda)
+ let anchoCelda1=70
+ let anchoCelda2=anchoCelda*2
+ let anchoCelda3=anchoCelda*3
+ let anchoCelda4=anchoCelda*4
+ let anchoCelda5=anchoCelda*5
+ let anchoCelda6=anchoCelda*6
+ let anchoCelda7=anchoCelda*7
+ let anchoCelda8=anchoCelda*8
+ let anchoCelda9=anchoCelda*9
+ let anchoCelda10=anchoCelda*10
+ let anchoCelda11=anchoCelda*11
+ let anchoCelda12=anchoCelda*12
+ let anchoCelda13=anchoCelda*13
+ let altoCelda1=altocelda
+ let altoCelda2=altocelda*2
+ let altoCelda3=altocelda*3
+ let altoCelda4=altocelda*4
+ let altoCelda5=altocelda*5
+ let altoCelda6=altocelda*6
+ let altoCelda7=altocelda*7
+ let altoCelda8=altocelda*8
+ let altoCelda9=altocelda*9
+ let altoCelda10=altocelda*10
+ let altoCelda11=altocelda*11
+ let altoCelda12=altocelda*12
+ let ancho=[anchoCelda1,anchoCelda2,anchoCelda3,anchoCelda4,anchoCelda5,anchoCelda6,anchoCelda7,anchoCelda8,anchoCelda9,anchoCelda10,anchoCelda11,anchoCelda12]
+ let alto=[altoCelda1,
+    altoCelda2,
+    altoCelda3,
+    altoCelda4,
+    altoCelda5,
+    altoCelda6,
+    altoCelda7,
+    altoCelda8,
+    altoCelda9,
+    altoCelda10,
+    altoCelda11,
+    altoCelda12
+]
+
+//DIBUJO LABERINTO
+ ctx.moveTo(0,altoCelda)
 ctx.lineTo(anchoCelda,altoCelda)
 ctx.moveTo(anchoCelda,altoCelda*2)
 ctx.lineTo(anchoCelda*2,altoCelda*2)
