@@ -252,7 +252,7 @@ ctx.stroke()
  setTimeout("dibujaCanvas()",30)
   
 }
-dibujaCanvas()
+
 document.onkeydown=function(event){
   if(event ==null){//Por si el navegador no reconoce el evento
     teclap=window.event.keyCode
