@@ -25,7 +25,7 @@ function Laberinto (cordX1,cordY1,cordX2,cordY2){
     let pRight = this.cordX1 + 5
     let pTop = this.cordY1
     let pBottom = this.cordY1+5
-    if ((indiceX+ashX>pLeft)||(indiceX<pRight)||indiceY+ashX>pTop||indiceY<pBottom){
+    if ((indiceX+daniX>pLeft)||(indiceX<pRight)||indiceY+daniX>pTop||indiceY<pBottom){
           colision=1
       
   }else{
@@ -67,60 +67,87 @@ let pared32 = new Laberinto(anchoCelda*12,altoCelda*3,anchoCelda*9,altoCelda*3)
 let pared33 = new Laberinto(anchoCelda*9,altoCelda*2,anchoCelda*9,altoCelda*3)
 let pared34 = new Laberinto(anchoCelda*9,altoCelda*2,anchoCelda*12,altoCelda*2)
 let pared35 = new Laberinto(anchoCelda*9,altoCelda*2,anchoCelda*9,altoCelda*1)
-let pared36 = new Laberinto(anchoCelda*13,altoCelda*2,anchoCelda*13,altoCelda*8)
+let pared36 = new Laberinto(anchoCelda*13,0,anchoCelda*13,altoCelda*8)
 let pared37 = new Laberinto(anchoCelda*13,altoCelda*8,anchoCelda*9,altoCelda*8)
 let pared38 = new Laberinto(anchoCelda*10,altoCelda*12,anchoCelda*10,altoCelda*9)
 let pared39 = new Laberinto(anchoCelda*10,altoCelda*12,anchoCelda*10,altoCelda*9)
 
-let paredes = [pared1,pared2,pared3,pared4,pared5,pared6,pared7,pared8,pared9,pared10,pared11,pared12,
-  pared13,
-  pared14,
-  pared15,
-  pared16,
-  pared17,
-  pared18,
-  pared19,
-  pared20,
-  pared21,
-  pared22,
-  pared23,
-  pared24,
-  pared25,
-  pared26,
-  pared27,
-  pared28,
-  pared29,
-  pared30,
-  pared31,
-  pared32,
-  pared33,
-  pared34,
-  pared35,
-  pared36,
-  pared37,
-  pared38,pared39]
+let paredes = [pared1,pared2,pared3,pared4,pared5,pared6,pared7,pared8,pared9,pared10,
+  pared11,pared12,pared13,pared14,pared15,pared16,
+  pared17,pared18,pared19,pared20,pared21,pared22,
+  pared23,pared24,pared25,pared26,pared27,pared28,
+  pared29,pared30,pared31,pared32, pared33,pared34,
+  pared35,pared36,pared37,pared38,pared39]
   let sprite = new Image()
-sprite.src="img/ash.png"
-let indiceX=0,indiceY=0;
-let ashX=0, ashY=0;
-let ancho1=64,alto1=64;
-let teclap=0;
-let colision=0
+  sprite.src="img/nn-run.png"
+  let indiceX=0,indiceY=0;
+  let daniX=0, daniY=70;
+  let ancho1=64,alto1=64;
+  let teclap=0;
+  let colision=0
 
+//PERSONAJES
+
+function Personaje(src,ubicacionX,ubicacionY,recorteX,recorteY,positionX,positionY){
+  this.source = src,
+  this.ubicacionX = ubicacionX,
+  this.ubicacionY=ubicacionY
+  this.recorteX= recorteX,
+  this.recorteY = recorteY
+  this.positionX = positionX
+  this.positionY=positionY
+}
+let objeto1 = new Personaje("img/llave.png",0,0,800,800,400,0)
+let llave = new Image()
+llave.src=objeto1.source
 function dibujar(){
   ctx.clearRect(0,0,canvas.width,canvas.height)
   paredes.forEach(function(e){ e.func();
     e.colision()
   
   })
-  ctx.drawImage(sprite,indiceX*32,indiceY*32,32,32,ashX,ashY,64,64)
+  // ctx.drawImage(sprite,indiceX*32,indiceY*32,32,32,ashX,ashY,64,64)
+
+  ctx.drawImage(sprite,indiceX*142,indiceY*142,142,198,daniX,daniY,64,64)
   indiceX= indiceX+1;
   if(indiceX>4){
     indiceX=0;}
- 
+    ctx.drawImage(llave,objeto1.ubicacionX,objeto1.ubicacionY,objeto1.recorteX,objeto1.recorteY,objeto1.positionX,objeto1.positionY,64,64)
       
     }
     setInterval(dibujar,30) 
+
+    document.onkeydown=function(event){
+      if(event ==null){//Por si el navegador no reconoce el evento
+        teclap=window.event.keyCode
+      }
+      else{
+        teclap= event.keyCode
+      }
+      switch(teclap){
+        case 40: // Tecla abajo
+      //  colision==2?ashY = ashY-10:
+      daniY = daniY+10;
+      // indiceY=0
+      break
+      case 37: // Tecla izquierda
+      // colision==1? ashX = ashX+10:
+      daniX = daniX-10;
+      // indiceY= 1
+    break
+    case 38: // Tecla arriba
+    // colision==2?ashY = ashY+10:
+    daniY = daniY-10;
+    // indiceY=2
+    break
+    case 39: // Tecla derecha
+    // colision==1? ashX=ashX-10: 
+    daniX = daniX+10;
+    // indiceY=3
+    break
+    default:
+      break
+      }}
 // for (let i = 0; i < ancho.length; i++) {
 //   if ((indiceX+ashX>ancho[i])&(indiceX<ancho[i]+5)){
 //     colision=1
@@ -304,32 +331,4 @@ function dibujar(){
   
 // }
 
-document.onkeydown=function(event){
-  if(event ==null){//Por si el navegador no reconoce el evento
-    teclap=window.event.keyCode
-  }
-  else{
-    teclap= event.keyCode
-  }
-  switch(teclap){
-    case 40: // Tecla abajo
-  //  colision==2?ashY = ashY-10:
-  ashY = ashY+10;indiceY=0
-  break
-  case 37: // Tecla izquierda
-  // colision==1? ashX = ashX+10:
-  ashX = ashX-10;
-  indiceY= 1
-break
-case 38: // Tecla arriba
-// colision==2?ashY = ashY+10:
-ashY = ashY-10;
-indiceY=2
-break
-case 39: // Tecla derecha
-// colision==1? ashX=ashX-10: 
-ashX = ashX+10;indiceY=3
-break
-default:
-  break
-  }}
+
