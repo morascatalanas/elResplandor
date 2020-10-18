@@ -52,80 +52,117 @@
 // //DIBUJO LABERINTO
 //  ctx.moveTo(0,altoCelda)
 // ctx.lineTo(anchoCelda,altoCelda)
+
 // ctx.moveTo(anchoCelda,altoCelda*2)
 // ctx.lineTo(anchoCelda*2,altoCelda*2)
+
 // ctx.moveTo(anchoCelda,altoCelda*2)
 // ctx.lineTo(anchoCelda,altoCelda*4)
+
 // ctx.moveTo(anchoCelda,altoCelda*4)
 // ctx.lineTo(anchoCelda*3,altoCelda*4)
+
 // ctx.moveTo(anchoCelda*3,altoCelda*2)
 // ctx.lineTo(anchoCelda*3,altoCelda*4)
+
 // ctx.moveTo(anchoCelda*2,altoCelda)
 // ctx.lineTo(anchoCelda*2,altoCelda*3)
+
 // ctx.moveTo(anchoCelda*2,altoCelda)
 // ctx.lineTo(anchoCelda*5,altoCelda)
+
 // ctx.moveTo(0,(altoCelda*6)+36.3)
 // ctx.lineTo(anchoCelda,(altoCelda*6)+36.3)
+
 // ctx.moveTo(anchoCelda,altoCelda*5)
 // ctx.lineTo(anchoCelda*5,altoCelda*5)
+
 // ctx.moveTo(anchoCelda,altoCelda*5)
 // ctx.lineTo(anchoCelda,altoCelda*8)
+
 // ctx.moveTo(anchoCelda*2,altoCelda*10)
 // ctx.lineTo(anchoCelda*2,altoCelda*6)
+
 // ctx.moveTo(anchoCelda*2,altoCelda*6)
 // ctx.lineTo(anchoCelda*3,altoCelda*6)
+
 // ctx.moveTo(anchoCelda*3,altoCelda*6)
 // ctx.lineTo(anchoCelda*3,altoCelda*8)
 // //
 // ctx.moveTo(anchoCelda*3,altoCelda*8)
 // ctx.lineTo(anchoCelda*7,altoCelda*8)
+
 // ctx.moveTo(anchoCelda*7,altoCelda*8)
 // ctx.lineTo(anchoCelda*7,altoCelda*7)
+
 // ctx.moveTo(anchoCelda*7,altoCelda*7)
 // ctx.lineTo(anchoCelda*4,altoCelda*7)
+
 // ctx.moveTo(anchoCelda*4,altoCelda*7)
 // ctx.lineTo(anchoCelda*4,altoCelda*6)
+
 // ctx.moveTo(anchoCelda*5,altoCelda*2)
 // ctx.lineTo(anchoCelda*4,altoCelda*2)
+
 // ctx.moveTo(anchoCelda*4,altoCelda*2)
 // ctx.lineTo(anchoCelda*4,altoCelda*4)
+
 // ctx.moveTo(anchoCelda*4,altoCelda*3)
 // ctx.lineTo(anchoCelda*6,altoCelda*3)
+
 // ctx.moveTo(anchoCelda*6,altoCelda*3)
 // ctx.lineTo(anchoCelda*6,altoCelda*4)
+
 // ctx.moveTo(anchoCelda*7,0)
 // ctx.lineTo(anchoCelda*7,altoCelda*3)
+
 // ctx.moveTo(anchoCelda*7,altoCelda*2)
 // ctx.lineTo(anchoCelda*8,altoCelda*2)
+
 // ctx.moveTo(anchoCelda*8,altoCelda*2)
 // ctx.lineTo(anchoCelda*8,altoCelda*4)
+
 // ctx.moveTo(anchoCelda*8,altoCelda*4)
 // ctx.lineTo(anchoCelda*10,altoCelda*4)
+
 // ctx.moveTo(anchoCelda*9,altoCelda*4)
 // ctx.lineTo(anchoCelda*9,altoCelda*5)
+
 // ctx.moveTo(anchoCelda*8,altoCelda*7)
 // ctx.lineTo(anchoCelda*8,altoCelda*10)
+
 // ctx.moveTo(anchoCelda*8,altoCelda*7)
 // ctx.lineTo(anchoCelda*10,altoCelda*7)
+
 // ctx.moveTo(anchoCelda*10,altoCelda*7)
 // ctx.lineTo(anchoCelda*10,altoCelda*6)
+
 // ctx.moveTo(anchoCelda*8,altoCelda*6)
 // ctx.lineTo(anchoCelda*12,altoCelda*6)
+
 // ctx.moveTo(anchoCelda*12,altoCelda*6)
 // ctx.lineTo(anchoCelda*12,altoCelda*3)
+
 // ctx.moveTo(anchoCelda*12,altoCelda*3)
 // ctx.lineTo(anchoCelda*9,altoCelda*3)
+
 // ctx.moveTo(anchoCelda*9,altoCelda*2)
 // ctx.lineTo(anchoCelda*9,altoCelda*3)
+
 // ctx.moveTo(anchoCelda*9,altoCelda*2)
 // ctx.lineTo(anchoCelda*12,altoCelda*2)
+
 // ctx.moveTo(anchoCelda*9,altoCelda*2)
 // ctx.lineTo(anchoCelda*9,altoCelda*1)
+
 // ctx.moveTo(anchoCelda*13,altoCelda*2)
 // ctx.lineTo(anchoCelda*13,altoCelda*8)
+
 // ctx.moveTo(anchoCelda*13,altoCelda*8)
 // ctx.lineTo(anchoCelda*9,altoCelda*8)
+
 // ctx.moveTo(anchoCelda*10,altoCelda*12)
 // ctx.lineTo(anchoCelda*10,altoCelda*9)
-// ctx.moveTo(anchoCelda*10,altoCelda*9)
-// ctx.lineTo(anchoCelda*13,altoCelda*9)
+
+// ctx.moveTo(anchoCelda*10,altoCelda*12)
+// ctx.lineTo(anchoCelda*10,altoCelda*9)
