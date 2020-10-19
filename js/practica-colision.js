@@ -66,10 +66,12 @@ function startGame() {
 
         if (vertical) {
             // <>
+            
             if (miTop > paredBase || miBase < paredTop ) {
                 colision=false
-            } else if(miDrc == paredIzq || miBase > paredTop ) {
-                colision=true
+            } else if(miDrc ==  paredIzq || miBase < paredTop ||  miIzq==paredDrc){
+             colision=true
+               
             }
         }else{
             if ( miTop > paredBase|| miBase < paredTop ) {
@@ -78,8 +80,7 @@ function startGame() {
                 colision=true
             }
         }
-        
-        // console.log(colision)
+        return colision
     }
     
   }
@@ -88,16 +89,35 @@ function startGame() {
     miAreaDejuego.clear();
    miPersonaje.speedX = 0;
     miPersonaje.speedY = 0;
-    if (miAreaDejuego.key && miAreaDejuego.key == 37) {miPersonaje.speedX = -1; }
-    if (miAreaDejuego.key && miAreaDejuego.key == 39) {miPersonaje.speedX = 1; }
-    if (miAreaDejuego.key && miAreaDejuego.key == 38) {miPersonaje.speedY = -1; }
-    if (miAreaDejuego.key && miAreaDejuego.key == 40) {miPersonaje.speedY = 1; }
+    if (miAreaDejuego.key && miAreaDejuego.key == 37){
+      if (miPersonaje.colision(misParedes[1])) {
+        miPersonaje.x+=miPersonaje.speedX
+      } else {
+        miPersonaje.speedX = -1;  
+        
+      }
+      }
+    if (miAreaDejuego.key && miAreaDejuego.key == 39) {
+      if (miPersonaje.colision(misParedes[1])) {
+        miPersonaje.x-=miPersonaje.speedX
+      } else {
+      miPersonaje.speedX = 1; 
+        
+      }  
+    }
+    if (miAreaDejuego.key && miAreaDejuego.key == 38) {
+      miPersonaje.speedY = -1;
+     }
+    if (miAreaDejuego.key && miAreaDejuego.key == 40) {
+      miPersonaje.speedY = 1; 
+     }
+
     miPersonaje.nuevaPosicion()
     miPersonaje.update();
-
+    miPersonaje.colision(misParedes[1])
     for (let i = 0; i < misParedes.length; i++) {
         misParedes[i].update()    
-        miPersonaje.colision(misParedes[i])
+  
         
     }
     
