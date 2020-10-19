@@ -26,14 +26,15 @@ function Rectangulo(positionX,positionY,ancho,alto){
             this.right=positionX+ancho
             this.top=positionY
             this.bottom=positionY+alto
-            // this.colision=function (uX,w,uY,h) {
-            // if((this.left<(uX+w)& (this.right>uX)& (this.bottom>uY)&(this.top<(uY+h)))){
-            //     colision=colision+1
-            // }else{
-            //     colision=0
-            // }   
+        
+            this.colision=function (uX,w,uY,h) {
+            if((this.left<(uX+w)& (this.right>uX)& (this.bottom>uY)&(this.top<(uY+h)))){
+                chocaron=true
+            }else{
+                chocaron=false
+            }   
             
-            // }
+            }
             this.dibujar=function(){
                 ctx.fillStyle="blue"
                 ctx.fillRect(this.positionX,this.positionY,this.ancho,this.alto)
@@ -44,28 +45,40 @@ function Rectangulo(positionX,positionY,ancho,alto){
 }
 let pared = new Rectangulo(100,300,100,10)
 let pared2=new Rectangulo(300,50,20,150)
-let paredes= [pared,pared2]
+let paredes= [pared2,pared]
 function dibujoCanvas(){
      ctx.fillStyle="pink"
      ctx.fillRect(0,0,canvas.width,canvas.height)
      ctx.drawImage(girl,puntoX*256,puntoY,256,256,ubicacionX,ubicacionY,ancho,alto)
     // ctx.fillStyle="red"
     //  ctx.fillRect(100,100,200,50)
-     pared.dibujar()
-     pared2.dibujar()
+    paredes.forEach(p=>{
+        p.dibujar()
+        p.colision(ubicacionX,ancho,ubicacionY,alto)
+        
+    })
+    // pared.dibujar()
+    //  pared2.dibujar()
      puntoX=puntoX+1
     
      if(puntoX>6){
         puntoX=0
     }
-   
-     paredes.forEach(function(e){
-          if((e.left<(ubicacionX+ancho)& (e.right>ubicacionX)& (e.bottom>ubicacionY)&(e.top<(ubicacionY+alto)))){
-            chocan()
-          }else{
-           chocaron=false
-          }
-      })
+    // for (let i = 0; i < paredes.length; i++) {
+    //    if((paredes[i].left<(ubicacionX+ancho)&& (paredes[i].right>ubicacionX)&& (paredes[i].bottom>ubicacionY)&&(paredes[i].top<(ubicacionY+alto)))){
+    //             chocan()
+    //           }else{
+    //            chocaron=false
+    //           }
+        
+    // }
+    //  paredes.forEach(function(e){
+    //       if((e.left<(ubicacionX+ancho)&& (e.right>ubicacionX)&& (e.bottom>ubicacionY)&&(e.top<(ubicacionY+alto)))){
+    //         chocan()
+    //       }else{
+    //        chocaron=false
+    //       }
+    //   })
     
     //  e.colision(ubicacionX,ancho,ubicacionY,alto))
     // ctx.fillStyle="blue"
@@ -82,8 +95,10 @@ function dibujoCanvas(){
     //     colision=0
     // }
     
-     setTimeout("dibujoCanvas()",1000/10)
+     setTimeout("dibujoCanvas()",1000/60)
 }
+
+
 function chocan(){
     console.log("chocann")
    
