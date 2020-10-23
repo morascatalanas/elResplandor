@@ -11,7 +11,7 @@ body{
 
 main{
     display: grid;
-    grid-template-columns: repeat(4,100vw);
+    grid-template-columns: repeat(5,100vw);
     grid-template-rows: repeat(1,100vh);
 }
 
