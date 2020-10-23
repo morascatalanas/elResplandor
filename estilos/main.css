@@ -1,0 +1,27 @@
+html {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+
+body{
+    margin: 0;
+    overflow: hidden;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(4,100vw);
+    grid-template-rows: repeat(1,100vh);
+}
+
+.slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('../img/alfombra.png');
+    color: white;
+}
